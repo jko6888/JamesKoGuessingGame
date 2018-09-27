@@ -17,9 +17,9 @@ public class Main {
         int chose = 0;
         if(me.toUpperCase().equals("COMPUTER")){
             boolean correct = false;
-            int low = 0;
-            int high = 100;
-            int choice = 50;
+            int low = 1;
+            int high = 10000;
+            int choice = 5000;
             while(correct != true){
                 choice = (low + high)/2;
                 System.out.println("" + person + " , is the number greater, less, or equal to " + choice + "? ");
