@@ -12,29 +12,28 @@ public class Main {
         Scanner game = new Scanner(System.in);
         System.out.println("Do you want the computer or user to guess?");
         Scanner difficulty = new Scanner(System.in);
-        System.out.println(person + ",Choose a difficulty(1,2,3 or 4)");
         String me = game.nextLine();
         int chose = 0;
-        if(me.toUpperCase().equals("COMPUTER")){
+        if(me.toLowerCase().equals("computer")){
             boolean correct = false;
             int low = 1;
-            int high = 10000;
-            int choice = 5000;
+            int high = 100;
+            int choice = 50;
             while(correct != true){
                 choice = (low + high)/2;
-                System.out.println("" + person + " , is the number greater, less, or equal to " + choice + "? ");
+                System.out.println("" + person + " , is the number greater, less, or equal to " + choice + "?");
                 Scanner test = new Scanner(System.in);
                 String str = test.nextLine();
-                if(str.toUpperCase().equals("GREATER")){
+                if(str.toLowerCase().equals("greater")){
                     low = (low + high)/2;
                     if(low%2 == 1){
                         low++;
                     }
                 }
-                else if(str.toUpperCase().equals("LESS")){
+                else if(str.toLowerCase().equals("less")){
                     high = choice;
                 }
-                else if(str.toUpperCase().equals("EQUAL")){
+                else if(str.toLowerCase().equals("equal")){
                     System.out.println("I got your number!");
                     correct = true;
                 }
@@ -44,14 +43,13 @@ public class Main {
                 chose++;
             }
         }
-        else if(me.toUpperCase().equals("USER")){
-            Scanner difficulty = new Scanner(System.in);
+        else if(me.toLowerCase().equals("user")){
             System.out.println(person + ",Choose a difficulty(1,2,3 or 4)");
-            int difficultyNum = difficulty.nextInt();
-            double x = Math.pow(10,difficultyNum);
+            int mode = difficulty.nextInt();
+            double a = Math.pow(10,mode);
             Scanner test = new Scanner(System.in);
-            int randomNumber = (int)(x*Math.random())+1;
-            System.out.println("Pick a number between 1 and " + (int)x);
+            int randomNumber = (int)(a*Math.random())+1;
+            System.out.println("Pick a number between 1 and " + (int)a);
             int guess = test.nextInt();
             while(guess != randomNumber){
                 System.out.println("Incorrect!");
